@@ -37,22 +37,29 @@ function Tag({ children }: { children: React.ReactNode }) {
 function Hero() {
   return (
     <section className="relative overflow-hidden noise" style={{ backgroundImage: "var(--gradient-glow)" }}>
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-20 pb-24 lg:pt-28 lg:pb-32">
-        <div className="grid lg:grid-cols-12 gap-12 items-end">
-          <div className="lg:col-span-7 reveal">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-16 pb-20 lg:pt-24 lg:pb-28">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div className="lg:col-span-6 reveal">
             <Tag>UK · Fleet maintenance intelligence</Tag>
-            <h1 className="mt-6 font-display text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.04em] text-ink">
+            <h1 className="mt-6 font-display text-[44px] sm:text-[60px] lg:text-[76px] leading-[0.95] tracking-[-0.04em] text-ink">
               Every repair,
               <br />
-              <span className="font-editorial italic text-ink-soft">smarter</span> than the last.
+              <span
+                className="font-editorial italic bg-clip-text text-transparent"
+                style={{ backgroundImage: "var(--gradient-vibrant)" }}
+              >
+                smarter
+              </span>{" "}
+              than the last.
             </h1>
-            <p className="mt-8 max-w-xl text-[17px] leading-relaxed text-ink-soft">
+            <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-ink-soft">
               FleetMind is the decision layer between your telematics and your workshop. It turns raw vehicle signals into ranked, evidence-backed maintenance actions — and learns from every outcome, on every van.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href="#contact"
-                className="inline-flex h-12 items-center gap-2 rounded-full bg-ink px-6 text-[15px] font-medium text-background hover:bg-ink/90 transition-colors shadow-[var(--shadow-soft)]"
+                className="inline-flex h-12 items-center gap-2 rounded-full px-6 text-[15px] font-medium text-background hover:opacity-95 transition-opacity shadow-[var(--shadow-elevated)]"
+                style={{ background: "var(--gradient-vibrant)" }}
               >
                 Book a UK demo
                 <span aria-hidden>→</span>
@@ -65,62 +72,48 @@ function Hero() {
               </a>
             </div>
 
-            <div className="mt-14 flex items-center gap-8 text-sm text-muted-foreground">
+            <div className="mt-12 flex items-center gap-6 text-sm text-muted-foreground">
               <div>
-                <p className="font-display text-2xl text-ink">−38%</p>
+                <p className="font-display text-2xl" style={{ color: "var(--coral)" }}>−38%</p>
                 <p className="text-xs mt-1">Avg. repeat-fault rate</p>
               </div>
               <div className="h-8 w-px bg-rule" />
               <div>
-                <p className="font-display text-2xl text-ink">4.2×</p>
+                <p className="font-display text-2xl" style={{ color: "var(--accent)" }}>4.2×</p>
                 <p className="text-xs mt-1">Faster diagnosis</p>
               </div>
               <div className="h-8 w-px bg-rule" />
               <div>
-                <p className="font-display text-2xl text-ink">24/7</p>
+                <p className="font-display text-2xl" style={{ color: "var(--violet)" }}>24/7</p>
                 <p className="text-xs mt-1">Conversational access</p>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-5 reveal" style={{ animationDelay: "120ms" }}>
-            <div className="relative rounded-2xl border border-rule bg-card overflow-hidden shadow-[var(--shadow-elevated)]">
-              <div className="flex items-center gap-1.5 px-4 py-3 border-b border-rule bg-surface">
-                <div className="h-2.5 w-2.5 rounded-full bg-rule" />
-                <div className="h-2.5 w-2.5 rounded-full bg-rule" />
-                <div className="h-2.5 w-2.5 rounded-full bg-rule" />
-                <p className="ml-3 font-mono-tag text-muted-foreground">fleetmind · workshop chat</p>
-              </div>
-              <div className="p-5 space-y-4 text-[14px]">
-                <div className="space-y-1">
-                  <p className="font-mono-tag text-muted-foreground">Mike · Workshop lead</p>
-                  <p className="text-ink">Van VX23 KLM keeps throwing a P0299 — second time this month.</p>
+          <div className="lg:col-span-6 reveal" style={{ animationDelay: "120ms" }}>
+            <div className="relative">
+              <div
+                className="absolute -inset-6 rounded-[2rem] opacity-60 blur-2xl -z-10"
+                style={{ background: "var(--gradient-vibrant)" }}
+              />
+              <div className="relative rounded-3xl overflow-hidden border border-rule shadow-[var(--shadow-elevated)] bg-card">
+                <img
+                  src={heroVan}
+                  alt="UK delivery van with FleetMind diagnostic data overlays"
+                  width={1280}
+                  height={1280}
+                  className="w-full h-auto"
+                />
+                <div
+                  className="absolute top-4 left-4 rounded-full px-3 py-1.5 text-xs font-mono-tag text-background"
+                  style={{ background: "var(--ink)" }}
+                >
+                  <span style={{ color: "var(--lime)" }}>●</span> Live · 1,284 vans
                 </div>
-                <div className="space-y-1">
-                  <p className="font-mono-tag text-accent">FleetMind</p>
-                  <div className="rounded-xl bg-surface border border-rule p-4">
-                    <p className="text-ink leading-relaxed">
-                      Most likely a leaking boost pipe at the EGR coupler — 71% confidence based on 14 similar Transit 2.0 EcoBlue cases in your fleet.
-                    </p>
-                    <div className="mt-3 grid grid-cols-3 gap-2 text-xs">
-                      <div className="rounded-md bg-background border border-rule p-2">
-                        <p className="text-muted-foreground">Cost</p>
-                        <p className="text-ink font-medium">£94</p>
-                      </div>
-                      <div className="rounded-md bg-background border border-rule p-2">
-                        <p className="text-muted-foreground">Downtime</p>
-                        <p className="text-ink font-medium">2.5h</p>
-                      </div>
-                      <div className="rounded-md bg-background border border-rule p-2">
-                        <p className="text-muted-foreground">Success</p>
-                        <p className="text-ink font-medium">88%</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 pt-1">
-                  <button className="text-xs rounded-full bg-ink text-background px-3 h-8">Approve action</button>
-                  <button className="text-xs rounded-full border border-rule px-3 h-8 text-ink-soft">Show alternatives</button>
+                <div className="absolute bottom-4 right-4 rounded-2xl bg-background/95 backdrop-blur border border-rule p-3 shadow-[var(--shadow-soft)]">
+                  <p className="font-mono-tag text-muted-foreground">Active decision</p>
+                  <p className="text-sm font-medium text-ink mt-1">VX23 KLM · Boost pipe</p>
+                  <p className="text-xs mt-0.5" style={{ color: "var(--accent)" }}>71% confidence · £94</p>
                 </div>
               </div>
             </div>
