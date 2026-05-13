@@ -81,6 +81,24 @@
   --accent-foreground: oklch(0.99 0 0);
   --surface-foreground: var(--ink);
 
+  /* Vibrant secondary palette */
+  --coral: oklch(0.72 0.18 38);
+  --lime: oklch(0.82 0.18 135);
+  --violet: oklch(0.58 0.22 300);
+  --amber: oklch(0.82 0.16 85);
+  --color-coral: var(--coral);
+  --color-lime: var(--lime);
+  --color-violet: var(--violet);
+  --color-amber: var(--amber);
+
+  --gradient-vibrant: linear-gradient(120deg,
+    oklch(0.52 0.22 260) 0%,
+    oklch(0.58 0.22 300) 45%,
+    oklch(0.72 0.18 38) 100%);
+  --gradient-warm: linear-gradient(135deg,
+    oklch(0.72 0.18 38) 0%,
+    oklch(0.82 0.16 85) 100%);
+
   --destructive: oklch(0.55 0.22 27);
   --destructive-foreground: oklch(0.99 0 0);
 
@@ -88,11 +106,12 @@
   --input: oklch(0.9 0.008 85);
   --ring: oklch(0.52 0.22 260);
 
-  --gradient-glow: radial-gradient(
-    1200px 600px at 50% -10%,
-    color-mix(in oklab, var(--accent) 14%, transparent),
-    transparent 60%
-  );
+  --gradient-glow: radial-gradient(900px 500px at 15% -10%,
+      color-mix(in oklab, var(--accent) 22%, transparent), transparent 60%),
+    radial-gradient(700px 480px at 95% 10%,
+      color-mix(in oklab, var(--coral) 28%, transparent), transparent 65%),
+    radial-gradient(800px 600px at 60% 110%,
+      color-mix(in oklab, var(--lime) 14%, transparent), transparent 70%);
   --shadow-soft: 0 1px 0 0 color-mix(in oklab, var(--ink) 4%, transparent),
     0 8px 24px -12px color-mix(in oklab, var(--ink) 18%, transparent);
   --shadow-elevated: 0 1px 0 0 color-mix(in oklab, var(--ink) 6%, transparent),
