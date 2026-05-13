@@ -221,13 +221,16 @@ function Product() {
 
         <div className="mt-16 grid md:grid-cols-2 gap-px bg-rule border border-rule rounded-2xl overflow-hidden">
           {features.map((f) => (
-            <article key={f.tag} className="bg-background p-8 lg:p-10 group hover:bg-card transition-colors">
-              <p className="font-mono-tag text-accent">{f.tag}</p>
+            <article key={f.tag} className="bg-background p-8 lg:p-10 group hover:bg-card transition-colors relative">
+              <span
+                className="absolute top-0 left-0 h-1 w-16 group-hover:w-32 transition-all duration-500"
+                style={{ background: f.color }}
+              />
+              <p className="font-mono-tag" style={{ color: f.color }}>{f.tag}</p>
               <h3 className="mt-4 font-display text-2xl lg:text-[28px] tracking-[-0.02em] text-ink">
                 {f.title}
               </h3>
               <p className="mt-3 text-ink-soft leading-relaxed">{f.body}</p>
-              <div className="mt-6 h-px w-12 bg-ink group-hover:w-24 transition-all duration-500" />
             </article>
           ))}
         </div>
