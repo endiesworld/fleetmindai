@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroNetwork from "@/assets/hero-network.jpg";
+import heroVan from "@/assets/hero-van.jpg";
 import ukFleet from "@/assets/uk-fleet.jpg";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
