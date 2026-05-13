@@ -188,21 +188,25 @@ function Product() {
       tag: "01 · Diagnostic intelligence",
       title: "Ranked diagnoses, with the receipts.",
       body: "FleetMind fuses live vehicle state, your repair history and external technical knowledge — OEM manuals, fault databases — into ordered diagnoses with confidence scores.",
+      color: "var(--accent)",
     },
     {
       tag: "02 · Decision engine",
       title: "Trade-offs, made explicit.",
       body: "Every recommended action is weighed on cost, downtime, parts availability and likelihood of success against your operational priorities.",
+      color: "var(--coral)",
     },
     {
       tag: "03 · Conversational interface",
       title: "Ask in WhatsApp. Act in the bay.",
       body: "Web, mobile, Slack, WhatsApp and voice. No dashboards to learn, no forms to fill — your team just talks to the fleet.",
+      color: "var(--violet)",
     },
     {
       tag: "04 · Outcome tracking",
       title: "A repair journal that remembers.",
       body: "Every action, every fix duration, every recurrence — captured as a structured signal that compounds into fleet-specific intelligence.",
+      color: "var(--lime)",
     },
   ];
   return (
