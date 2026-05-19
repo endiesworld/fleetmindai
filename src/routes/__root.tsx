@@ -72,18 +72,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Fleetmind UK Launch is a sleek, modern website showcasing Fleetmind AI's fleet management solutions for the UK market." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Fleetmind UK Launch is a sleek, modern website showcasing Fleetmind AI's fleet management solutions for the UK market." },
+      { title: "FleetMind Fleet Reliability Intelligence Platform" },
+      {
+        name: "description",
+        content:
+          "FleetMind is a Fleet Reliability Intelligence Platform that turns vehicle signals into evidence-based reliability actions and improves fleet decisions using real-world outcomes.",
+      },
+      { name: "author", content: "Fleetmind AI" },
+      { property: "og:title", content: "FleetMind Fleet Reliability Intelligence Platform" },
+      {
+        property: "og:description",
+        content:
+          "FleetMind is a Fleet Reliability Intelligence Platform that turns vehicle signals into evidence-based reliability actions and improves fleet decisions using real-world outcomes.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Fleetmind UK Launch is a sleek, modern website showcasing Fleetmind AI's fleet management solutions for the UK market." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1e81f8bf-ebfe-4ecf-9085-6ea61cf6b52d/id-preview-47496a9a--82b00ab8-326e-410b-9159-e916790357fa.lovable.app-1778674890958.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1e81f8bf-ebfe-4ecf-9085-6ea61cf6b52d/id-preview-47496a9a--82b00ab8-326e-410b-9159-e916790357fa.lovable.app-1778674890958.png" },
+      { name: "twitter:title", content: "FleetMind Fleet Reliability Intelligence Platform" },
+      {
+        name: "twitter:description",
+        content:
+          "FleetMind is a Fleet Reliability Intelligence Platform that turns vehicle signals into evidence-based reliability actions and improves fleet decisions using real-world outcomes.",
+      },
     ],
     links: [
       {

@@ -8,7 +8,8 @@
   font-family: "InterVar";
   font-style: normal;
   font-display: swap;
-  src: url("https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50ojIa1ZL7.woff2") format("woff2");
+  src: url("https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50ojIa1ZL7.woff2")
+    format("woff2");
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap");
@@ -54,8 +55,8 @@
   --radius: 0.5rem;
 
   /* Editorial off-white paper */
-  --background: oklch(0.985 0.005 85);
-  --surface: oklch(0.965 0.008 85);
+  --background: oklch(0.982 0.008 88);
+  --surface: oklch(0.955 0.012 88);
   --foreground: oklch(0.18 0.02 250);
   --ink: oklch(0.14 0.02 250);
   --ink-soft: oklch(0.32 0.015 250);
@@ -76,28 +77,11 @@
   --muted: oklch(0.94 0.008 85);
   --muted-foreground: oklch(0.45 0.015 250);
 
-  /* Electric cobalt accent */
-  --accent: oklch(0.52 0.22 260);
+  --red: oklch(0.58 0.2 28);
+  --green: oklch(0.56 0.17 145);
+  --accent: var(--green);
   --accent-foreground: oklch(0.99 0 0);
   --surface-foreground: var(--ink);
-
-  /* Vibrant secondary palette */
-  --coral: oklch(0.72 0.18 38);
-  --lime: oklch(0.82 0.18 135);
-  --violet: oklch(0.58 0.22 300);
-  --amber: oklch(0.82 0.16 85);
-  --color-coral: var(--coral);
-  --color-lime: var(--lime);
-  --color-violet: var(--violet);
-  --color-amber: var(--amber);
-
-  --gradient-vibrant: linear-gradient(120deg,
-    oklch(0.52 0.22 260) 0%,
-    oklch(0.58 0.22 300) 45%,
-    oklch(0.72 0.18 38) 100%);
-  --gradient-warm: linear-gradient(135deg,
-    oklch(0.72 0.18 38) 0%,
-    oklch(0.82 0.16 85) 100%);
 
   --destructive: oklch(0.55 0.22 27);
   --destructive-foreground: oklch(0.99 0 0);
@@ -106,15 +90,11 @@
   --input: oklch(0.9 0.008 85);
   --ring: oklch(0.52 0.22 260);
 
-  --gradient-glow: radial-gradient(900px 500px at 15% -10%,
-      color-mix(in oklab, var(--accent) 22%, transparent), transparent 60%),
-    radial-gradient(700px 480px at 95% 10%,
-      color-mix(in oklab, var(--coral) 28%, transparent), transparent 65%),
-    radial-gradient(800px 600px at 60% 110%,
-      color-mix(in oklab, var(--lime) 14%, transparent), transparent 70%);
-  --shadow-soft: 0 1px 0 0 color-mix(in oklab, var(--ink) 4%, transparent),
+  --shadow-soft:
+    0 1px 0 0 color-mix(in oklab, var(--ink) 4%, transparent),
     0 8px 24px -12px color-mix(in oklab, var(--ink) 18%, transparent);
-  --shadow-elevated: 0 1px 0 0 color-mix(in oklab, var(--ink) 6%, transparent),
+  --shadow-elevated:
+    0 1px 0 0 color-mix(in oklab, var(--ink) 6%, transparent),
     0 24px 48px -20px color-mix(in oklab, var(--ink) 25%, transparent);
 }
 
@@ -168,14 +148,13 @@
   }
   .font-mono-tag {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
   }
   .grid-lines {
-    background-image:
-      linear-gradient(to right, var(--rule) 1px, transparent 1px);
-    background-size: 100px 100%;
+    background-image: none;
   }
   .noise {
     position: relative;
@@ -192,15 +171,159 @@
   .marquee {
     animation: marquee 40s linear infinite;
   }
+  .marquee-reverse {
+    animation: marquee-reverse 40s linear infinite;
+  }
+  .cta-marquee span {
+    animation: cta-marquee-tone 6s ease-in-out infinite;
+  }
+  .cta-marquee span:nth-child(even) {
+    animation-delay: 3s;
+  }
+  .capability-slider {
+    overflow-x: clip;
+  }
+  .capability-track {
+    animation: capability-slide 46s linear infinite;
+  }
+  .capability-slider:hover .capability-track {
+    animation-play-state: paused;
+  }
+  .advantage-flash-card {
+    opacity: 0;
+    animation: advantage-flash 12s ease-in-out infinite;
+  }
+  .workflow-step {
+    opacity: 0.28;
+    animation: workflow-step 12s ease-in-out infinite;
+  }
+  .outcome-check {
+    display: inline-block;
+    animation: outcome-check-flash 1.4s ease-in-out infinite;
+  }
   @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes marquee-reverse {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes cta-marquee-tone {
+    0%,
+    45%,
+    100% {
+      color: color-mix(in oklab, var(--ink-soft) 70%, transparent);
+    }
+    55%,
+    85% {
+      color: var(--green);
+    }
+  }
+  @keyframes outcome-check-flash {
+    0%,
+    45%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    55%,
+    80% {
+      opacity: 0.18;
+      transform: scale(0.92);
+    }
+  }
+  @keyframes capability-slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 0.5rem));
+    }
+  }
+  @keyframes advantage-flash {
+    0%,
+    18% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    25%,
+    43% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    50%,
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes workflow-step {
+    0%,
+    18% {
+      opacity: 0.28;
+      transform: translateX(0);
+    }
+    25%,
+    43% {
+      opacity: 1;
+      transform: translateX(8px);
+    }
+    50%,
+    100% {
+      opacity: 0.28;
+      transform: translateX(0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .capability-track {
+      animation: none;
+    }
+    .capability-slider {
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    .marquee,
+    .marquee-reverse,
+    .cta-marquee span {
+      animation: none;
+    }
+    .advantage-flash-card {
+      animation: none;
+      opacity: 0;
+    }
+    .advantage-flash-card:first-child {
+      opacity: 1;
+      transform: none;
+    }
+    .workflow-step {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+    .outcome-check {
+      animation: none;
+    }
   }
   .reveal {
     animation: reveal 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
   @keyframes reveal {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

@@ -1,24 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroNetwork from "@/assets/hero-network.jpg";
-import heroVan from "@/assets/hero-van.jpg";
-import ukFleet from "@/assets/uk-fleet.jpg";
+import heroVan from "@/assets/new-van-image.png";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FleetMind — Maintenance decision intelligence for UK fleets" },
+      { title: "FleetMind — Fleet Reliability Intelligence Platform" },
       {
         name: "description",
         content:
-          "FleetMind turns vehicle signals into evidence-based maintenance decisions, learning from every repair to make the next one smarter. Built for UK fleet operators.",
+          "FleetMind turns raw vehicle signals into evidence-based reliability actions and continuously improves fleet operations using real-world outcomes.",
       },
-      { property: "og:title", content: "FleetMind — Decision intelligence for fleet maintenance" },
+      { property: "og:title", content: "FleetMind — Fleet Reliability Intelligence Platform" },
       {
         property: "og:description",
         content:
-          "From signal to decision to outcome. The intelligence layer between telematics and the workshop.",
+          "The reliability intelligence layer between telematics systems and frontline fleet execution.",
       },
     ],
   }),
@@ -36,226 +35,201 @@ function Tag({ children }: { children: React.ReactNode }) {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden noise" style={{ backgroundImage: "var(--gradient-glow)" }}>
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-16 pb-20 lg:pt-24 lg:pb-28">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <section className="relative overflow-hidden bg-surface">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-16 pb-14 lg:pt-24 lg:pb-18">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:items-end lg:gap-12">
           <div className="lg:col-span-6 reveal">
-            <Tag>UK · Fleet maintenance intelligence</Tag>
+            <Tag>Fleet Reliability Intelligence Platform</Tag>
             <h1 className="mt-6 font-display text-[44px] sm:text-[60px] lg:text-[76px] leading-[0.95] tracking-[-0.04em] text-ink">
-              Every repair,
+              From{" "}
+              <span className="font-editorial font-bold italic" style={{ color: "var(--red)" }}>
+                signal
+              </span>
               <br />
-              <span
-                className="font-editorial italic bg-clip-text text-transparent"
-                style={{ backgroundImage: "var(--gradient-vibrant)" }}
-              >
-                smarter
-              </span>{" "}
-              than the last.
+              to{" "}
+              <span className="font-editorial italic" style={{ color: "var(--green)" }}>
+                decision
+              </span>
+              <br />
+              to{" "}
+              <span className="inline-flex items-baseline gap-3 font-editorial italic text-ink">
+                outcome
+                <span
+                  className="outcome-check font-sans text-[0.72em] not-italic"
+                  style={{ color: "var(--green)" }}
+                  aria-hidden
+                >
+                  ✓
+                </span>
+              </span>
             </h1>
             <p className="mt-7 max-w-xl text-[17px] leading-relaxed text-ink-soft">
-              FleetMind is the decision layer between your telematics and your workshop. It turns raw vehicle signals into ranked, evidence-backed maintenance actions — and learns from every outcome, on every van.
+              FleetMind operates between telematics systems and frontline fleet execution. It
+              transforms raw vehicle signals into evidence-based reliability actions, delivers that
+              intelligence through natural conversation, and learns from real-world operational
+              outcomes.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
                 href="#contact"
-                className="inline-flex h-12 items-center gap-2 rounded-full px-6 text-[15px] font-medium text-background hover:opacity-95 transition-opacity shadow-[var(--shadow-elevated)]"
-                style={{ background: "var(--gradient-vibrant)" }}
+                className="inline-flex h-12 items-center gap-2 rounded-full bg-ink px-6 text-[15px] font-medium text-background shadow-[var(--shadow-elevated)] transition-opacity hover:opacity-95"
               >
-                Book a UK demo
+                See the decision loop
                 <span aria-hidden>→</span>
               </a>
               <a
-                href="#how"
+                href="#capabilities"
                 className="inline-flex h-12 items-center gap-2 rounded-full border border-rule px-6 text-[15px] text-ink hover:bg-surface transition-colors"
               >
-                See how it works
+                Explore capabilities
               </a>
             </div>
 
             <div className="mt-12 flex items-center gap-6 text-sm text-muted-foreground">
               <div>
-                <p className="font-display text-2xl" style={{ color: "var(--coral)" }}>−38%</p>
-                <p className="text-xs mt-1">Avg. repeat-fault rate</p>
+                <p className="font-display text-2xl" style={{ color: "var(--red)" }}>
+                  Alert
+                </p>
+                <p className="text-xs mt-1">Vehicle signal</p>
               </div>
               <div className="h-8 w-px bg-rule" />
               <div>
-                <p className="font-display text-2xl" style={{ color: "var(--accent)" }}>4.2×</p>
-                <p className="text-xs mt-1">Faster diagnosis</p>
+                <p className="font-display text-2xl" style={{ color: "var(--green)" }}>
+                  Action
+                </p>
+                <p className="text-xs mt-1">Evidence-backed operation</p>
               </div>
               <div className="h-8 w-px bg-rule" />
               <div>
-                <p className="font-display text-2xl" style={{ color: "var(--violet)" }}>24/7</p>
-                <p className="text-xs mt-1">Conversational access</p>
+                <p className="font-display text-2xl text-ink">Learn</p>
+                <p className="text-xs mt-1">Outcome improves the next decision</p>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-6 reveal" style={{ animationDelay: "120ms" }}>
+          <div className="reveal lg:col-span-6 lg:self-end" style={{ animationDelay: "120ms" }}>
             <div className="relative">
-              <div
-                className="absolute -inset-6 rounded-[2rem] opacity-60 blur-2xl -z-10"
-                style={{ background: "var(--gradient-vibrant)" }}
-              />
-              <div className="relative rounded-3xl overflow-hidden border border-rule shadow-[var(--shadow-elevated)] bg-card">
+              <div className="relative h-[430px] overflow-hidden rounded-b-xl bg-surface shadow-[0_34px_80px_-48px_color-mix(in_oklab,var(--ink)_62%,transparent)] sm:h-[520px] lg:h-[620px] lg:rounded-b-2xl">
                 <img
                   src={heroVan}
-                  alt="UK delivery van with FleetMind diagnostic data overlays"
-                  width={1280}
-                  height={1280}
-                  className="w-full h-auto"
+                  alt="Delivery vehicle with FleetMind reliability intelligence overlays"
+                  width={1240}
+                  height={1268}
+                  className="h-full w-full scale-[1.18] object-cover object-[50%_40%]"
                 />
-                <div
-                  className="absolute top-4 left-4 rounded-full px-3 py-1.5 text-xs font-mono-tag text-background"
-                  style={{ background: "var(--ink)" }}
-                >
-                  <span style={{ color: "var(--lime)" }}>●</span> Live · 1,284 vans
-                </div>
-                <div className="absolute bottom-4 right-4 rounded-2xl bg-background/95 backdrop-blur border border-rule p-3 shadow-[var(--shadow-soft)]">
-                  <p className="font-mono-tag text-muted-foreground">Active decision</p>
-                  <p className="text-sm font-medium text-ink mt-1">VX23 KLM · Boost pipe</p>
-                  <p className="text-xs mt-0.5" style={{ color: "var(--accent)" }}>71% confidence · £94</p>
-                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* logo strip */}
-      <div className="border-y border-rule bg-surface/60">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex items-center gap-10 overflow-hidden">
-          <p className="font-mono-tag text-muted-foreground shrink-0">Built for fleets like</p>
-          <div className="flex gap-12 marquee whitespace-nowrap text-ink-soft/70 font-display text-lg tracking-tight">
-            {Array.from({ length: 2 }).map((_, i) => (
-              <div key={i} className="flex gap-12 items-center">
-                <span>DPD UK</span><span>·</span>
-                <span>Royal Mail</span><span>·</span>
-                <span>British Gas</span><span>·</span>
-                <span>National Grid</span><span>·</span>
-                <span>Openreach</span><span>·</span>
-                <span>Tesco Logistics</span><span>·</span>
-                <span>Eddie Stobart</span><span>·</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Capabilities />
       </div>
     </section>
   );
 }
 
-function Problem() {
-  const items = [
-    "Telematics shouts. Nobody decides.",
-    "Diagnoses live in one engineer's head.",
-    "Repeat faults. Repeat costs.",
-    "No record of what actually worked.",
-  ];
-  return (
-    <section className="mx-auto max-w-7xl px-6 lg:px-10 py-28">
-      <div className="grid lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-4">
-          <Tag>The problem</Tag>
-          <h2 className="mt-5 font-display text-4xl lg:text-5xl tracking-[-0.035em] text-ink">
-            Fleets see everything,
-            <br />
-            <span className="font-editorial italic text-ink-soft">decide nothing.</span>
-          </h2>
-        </div>
-        <div className="lg:col-span-8 lg:pt-3">
-          <ul className="divide-y divide-rule border-y border-rule">
-            {items.map((t, i) => (
-              <li key={t} className="flex items-baseline gap-6 py-6">
-                <span className="font-mono-tag text-muted-foreground tabular-nums">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="font-display text-2xl lg:text-[28px] tracking-[-0.02em] text-ink">{t}</p>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-8 text-ink-soft max-w-2xl leading-relaxed">
-            UK operators lose millions every year to unnecessary downtime, inconsistent repair quality and lost institutional knowledge. The dashboards keep multiplying. The decisions don't get easier.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Product() {
+function Capabilities() {
   const features = [
     {
-      tag: "01 · Diagnostic intelligence",
-      title: "Ranked diagnoses, with the receipts.",
-      body: "FleetMind fuses live vehicle state, your repair history and external technical knowledge — OEM manuals, fault databases — into ordered diagnoses with confidence scores.",
-      color: "var(--accent)",
+      tag: "01 · Reliability intelligence",
+      title: "Ranked reliability insights using service history, OEM knowledge and fault data.",
+
+      color: "var(--green)",
     },
     {
       tag: "02 · Decision engine",
-      title: "Trade-offs, made explicit.",
-      body: "Every recommended action is weighed on cost, downtime, parts availability and likelihood of success against your operational priorities.",
-      color: "var(--coral)",
+      title: "Operational actions evaluated against real constraints.",
+
+      color: "var(--red)",
     },
     {
-      tag: "03 · Conversational interface",
-      title: "Ask in WhatsApp. Act in the bay.",
-      body: "Web, mobile, Slack, WhatsApp and voice. No dashboards to learn, no forms to fill — your team just talks to the fleet.",
-      color: "var(--violet)",
+      tag: "03 · Human-in-the-loop learning",
+      title: "Approvals, rejections and changes become learning signals.",
+
+      color: "var(--ink)",
     },
     {
-      tag: "04 · Outcome tracking",
-      title: "A repair journal that remembers.",
-      body: "Every action, every fix duration, every recurrence — captured as a structured signal that compounds into fleet-specific intelligence.",
-      color: "var(--lime)",
+      tag: "04 · Conversational interface",
+      title: "Accessible through natural conversation on any device.",
+
+      color: "var(--green)",
+    },
+    {
+      tag: "05 · Outcome tracking",
+      title: "An outcome journal that records what actually happened.",
+
+      color: "var(--green)",
+    },
+    {
+      tag: "06 · Continuous learning",
+      title: "Every outcome improves future decisions.",
+
+      color: "var(--red)",
     },
   ];
-  return (
-    <section id="product" className="bg-surface border-y border-rule">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-28">
-        <div className="max-w-3xl">
-          <Tag>The product</Tag>
-          <h2 className="mt-5 font-display text-4xl lg:text-6xl tracking-[-0.035em] text-ink leading-[1]">
-            One system. Four moves that change <span className="font-editorial italic">everything.</span>
-          </h2>
-        </div>
+  const slideFeatures = [...features, ...features];
 
-        <div className="mt-16 grid md:grid-cols-2 gap-px bg-rule border border-rule rounded-2xl overflow-hidden">
-          {features.map((f) => (
-            <article key={f.tag} className="bg-background p-8 lg:p-10 group hover:bg-card transition-colors relative">
-              <span
-                className="absolute top-0 left-0 h-1 w-16 group-hover:w-32 transition-all duration-500"
-                style={{ background: f.color }}
-              />
-              <p className="font-mono-tag" style={{ color: f.color }}>{f.tag}</p>
-              <h3 className="mt-4 font-display text-2xl lg:text-[28px] tracking-[-0.02em] text-ink">
+  return (
+    <div id="capabilities" className="pt-12 lg:pt-14">
+      <div className="max-w-3xl">
+        <Tag>Platform capabilities</Tag>
+      </div>
+
+      <div className="capability-slider mt-8 overflow-hidden py-3">
+        <div className="capability-track flex w-max gap-4">
+          {slideFeatures.map((f, index) => (
+            <article
+              key={`${f.tag}-${index}`}
+              className="relative min-h-[170px] w-[64vw] max-w-[245px] shrink-0 overflow-hidden rounded-lg border border-rule bg-background p-4 shadow-[var(--shadow-soft)] transition-colors hover:bg-card sm:w-[220px] lg:w-[235px]"
+              aria-hidden={index >= features.length ? true : undefined}
+            >
+              <span className="absolute top-0 left-0 h-0.5 w-12" style={{ background: f.color }} />
+              <p className="font-mono text-[0.58rem] font-normal uppercase tracking-[0.03em] text-muted-foreground">
+                {f.tag}
+              </p>
+              <h3 className="mt-3 text-[15px] font-medium leading-snug tracking-[-0.01em] text-ink-soft lg:text-base">
                 {f.title}
               </h3>
-              <p className="mt-3 text-ink-soft leading-relaxed">{f.body}</p>
             </article>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
 function HowItWorks() {
   const steps = [
-    { k: "Signal", v: "Telematics, DTCs, driver reports and sensor history are normalised into a decision context." },
-    { k: "Decision", v: "FleetMind ranks faults, scores actions, and surfaces the recommendation with full evidence." },
-    { k: "Outcome", v: "The action is logged. Time-to-fix, success and recurrence feed back into the model." },
-    { k: "Learning", v: "Confidence, costs and success rates update — uniquely, for your fleet, every day." },
+    {
+      k: "Signal",
+      v: "Telematics, DTCs, driver reports, sensor history and service records are normalised into an operational context.",
+    },
+    {
+      k: "Decision",
+      v: "FleetMind ranks reliability risks, evaluates operational options and recommends the best action with supporting evidence.",
+    },
+    {
+      k: "Outcome",
+      v: "The operational action, resolution time, recurrence and human rationale are captured after execution.",
+    },
+    {
+      k: "Learning",
+      v: "Reliability confidence, action success rates and fleet-specific patterns improve the next recommendation.",
+    },
   ];
   return (
-    <section id="how" className="mx-auto max-w-7xl px-6 lg:px-10 py-28">
-      <div className="grid lg:grid-cols-12 gap-16 items-start">
-        <div className="lg:col-span-5 lg:sticky lg:top-24">
+    <section id="how" className="bg-surface">
+      <div className="mx-auto grid max-w-7xl items-start gap-16 px-6 py-14 lg:grid-cols-12 lg:px-10 lg:py-18">
+        <div className="lg:col-span-6 lg:sticky lg:top-24">
           <Tag>How it works</Tag>
-          <h2 className="mt-5 font-display text-4xl lg:text-5xl tracking-[-0.035em] text-ink leading-[1.02]">
-            A closed loop from signal to learning.
+          <h2 className="mt-5 max-w-md font-display text-3xl leading-[1.05] tracking-[-0.03em] text-ink sm:text-4xl">
+            The outcome-linked{" "}
+            <span className="font-editorial italic" style={{ color: "var(--green)" }}>
+              learning loop.
+            </span>
           </h2>
-          <p className="mt-6 text-ink-soft leading-relaxed max-w-md">
-            Most platforms stop at visibility. FleetMind keeps going — and improves itself with every repair.
+          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-ink-soft">
+            FleetMind’s core advantage is not visibility alone. Each outcome feeds the loop and
+            improves the next fleet reliability decision.
           </p>
           <div className="mt-10 rounded-2xl border border-rule overflow-hidden bg-card">
             <img
@@ -269,14 +243,20 @@ function HowItWorks() {
           </div>
         </div>
 
-        <ol className="lg:col-span-7 relative">
+        <ol className="relative lg:col-span-6">
           <div className="absolute left-[11px] top-2 bottom-2 w-px bg-rule" aria-hidden />
           {steps.map((s, i) => (
-            <li key={s.k} className="relative pl-12 pb-12 last:pb-0">
+            <li
+              key={s.k}
+              className="workflow-step relative pb-12 pl-12 last:pb-0"
+              style={{ animationDelay: `${i * 3}s` }}
+            >
               <span className="absolute left-0 top-1 h-6 w-6 rounded-full bg-background border border-ink flex items-center justify-center font-mono-tag text-[10px] text-ink">
                 {i + 1}
               </span>
-              <h3 className="font-display text-3xl lg:text-4xl tracking-[-0.03em] text-ink">{s.k}</h3>
+              <h3 className="font-display text-3xl lg:text-4xl tracking-[-0.03em] text-ink">
+                {s.k}
+              </h3>
               <p className="mt-3 text-ink-soft leading-relaxed max-w-xl">{s.v}</p>
             </li>
           ))}
@@ -288,38 +268,44 @@ function HowItWorks() {
 
 function Advantage() {
   return (
-    <section id="advantage" className="relative bg-ink text-background overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-[0.08]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-        }}
-      />
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 py-28">
-        <div className="grid lg:grid-cols-12 gap-12">
+    <section id="advantage" className="relative overflow-hidden bg-surface text-ink">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 py-14 lg:py-18">
+        <div className="grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-6">
-            <span className="font-mono-tag text-background/50">The strategic advantage</span>
-            <h2 className="mt-5 font-display text-4xl lg:text-6xl tracking-[-0.035em] leading-[1]">
-              The longer it runs, <br />
-              the <span className="font-editorial italic text-accent-foreground/90">harder</span> it is to replace.
+            <span className="font-mono-tag text-muted-foreground">Differentiation</span>
+            <h2 className="mt-5 max-w-2xl font-display text-3xl leading-[1.04] tracking-[-0.03em] text-ink sm:text-4xl lg:text-5xl">
+              Traditional systems stop at{" "}
+              <span className="font-editorial italic" style={{ color: "var(--red)" }}>
+                visibility.
+              </span>{" "}
+              FleetMind closes the{" "}
+              <span className="font-editorial italic" style={{ color: "var(--green)" }}>
+                loop.
+              </span>
             </h2>
-            <p className="mt-8 text-background/70 max-w-lg leading-relaxed">
-              Outcome-linked learning means every action is connected to its result. Knowledge accumulates uniquely for your fleet — how it fails, and how it's best repaired. That moat doesn't transfer.
+            <p className="mt-6 max-w-lg leading-relaxed text-ink-soft">
+              The system moves from signal to decision to outcome to learning, so every real-world
+              result becomes part of the fleet reliability intelligence layer.
             </p>
           </div>
 
-          <div className="lg:col-span-6 grid sm:grid-cols-2 gap-px bg-background/10 border border-background/10 rounded-2xl overflow-hidden">
+          <div className="relative h-[210px] overflow-hidden rounded-2xl border border-rule bg-background shadow-[var(--shadow-soft)] lg:col-span-6">
             {[
               ["Recommends", "specific actions, not just alerts"],
-              ["Explains", "trade-offs in plain language"],
+              ["Explains", "cost, downtime and success trade-offs"],
               ["Captures", "rationale and outcomes"],
-              ["Learns", "from real-world results"],
-            ].map(([k, v]) => (
-              <div key={k} className="bg-ink p-8">
-                <p className="font-display text-2xl text-background">{k}</p>
-                <p className="mt-2 text-sm text-background/60">{v}</p>
+              ["Delivers", "intelligence through conversation"],
+            ].map(([k, v], index) => (
+              <div
+                key={k}
+                className="advantage-flash-card absolute inset-0 flex flex-col justify-center p-8"
+                style={{ animationDelay: `${index * 3}s` }}
+              >
+                <p className="font-mono-tag text-muted-foreground">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <p className="mt-4 font-display text-3xl tracking-[-0.03em] text-ink">{k}</p>
+                <p className="mt-2 max-w-sm text-sm leading-relaxed text-ink-soft">{v}</p>
               </div>
             ))}
           </div>
@@ -329,37 +315,48 @@ function Advantage() {
   );
 }
 
-function UkSection() {
+function StrategicAdvantage() {
   return (
-    <section id="uk" className="mx-auto max-w-7xl px-6 lg:px-10 py-28">
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="rounded-2xl overflow-hidden border border-rule">
-          <img
-            src={ukFleet}
-            alt="UK commercial van fleet at a depot"
-            width={1600}
-            height={1000}
-            loading="lazy"
-            className="w-full h-auto"
-          />
-        </div>
-        <div>
-          <Tag>Built for the UK market</Tag>
-          <h2 className="mt-5 font-display text-4xl lg:text-5xl tracking-[-0.035em] text-ink leading-[1.02]">
-            Tuned to British vans, depots and DVSA realities.
+    <section id="strategy" className="bg-surface">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-14 lg:grid-cols-12 lg:px-10 lg:py-18">
+        <div className="lg:col-span-6">
+          <Tag>Strategic advantage</Tag>
+          <h2 className="mt-5 max-w-xl font-display text-3xl leading-[1.05] tracking-[-0.03em] text-ink sm:text-4xl">
+            Outcome-linked learning compounds into{" "}
+            <span className="font-editorial italic" style={{ color: "var(--green)" }}>
+              fleet-specific intelligence.
+            </span>
           </h2>
-          <ul className="mt-8 space-y-5 text-ink-soft">
+          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-ink-soft">
+            Over time, FleetMind learns which reliability actions work best for a given situation:
+            the asset, fault pattern, operating context, cost profile, team judgement and
+            operational result. That knowledge improves future decisions instead of being lost after
+            the work order closes.
+          </p>
+        </div>
+        <div className="rounded-2xl border border-rule bg-background p-7 shadow-[var(--shadow-soft)] lg:col-span-6 lg:p-9">
+          <p className="font-mono-tag text-muted-foreground">Knowledge captured</p>
+          <ul className="mt-6 divide-y divide-rule text-ink-soft">
             {[
-              ["Transit, Sprinter, Vivaro & Crafter intelligence", "Pre-trained on the vehicles that actually run UK roads."],
-              ["DVSA-aligned record keeping", "Maintenance evidence in a format that survives an audit."],
-              ["Workshop & roadside ready", "WhatsApp, voice and PWA — built for the bay, the cab and the van side."],
-              ["GBP-native trade-offs", "Cost, downtime and SLA modelled in the units your operations team already uses."],
+              [
+                "What failed",
+                "Vehicle state, fault codes, driver reports and reliability evidence.",
+              ],
+              [
+                "What was decided",
+                "Approved, rejected or modified actions and the rationale behind them.",
+              ],
+              ["What happened", "Resolution time, recurrence, cost impact and action success."],
+              [
+                "What improves",
+                "Confidence scores, action success rates and future recommendations.",
+              ],
             ].map(([h, b]) => (
-              <li key={h} className="flex gap-4">
+              <li key={h} className="flex gap-4 py-4 first:pt-0 last:pb-0">
                 <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                 <div>
-                  <p className="text-ink font-medium">{h}</p>
-                  <p className="text-sm mt-1 leading-relaxed">{b}</p>
+                  <p className="text-sm font-medium text-ink">{h}</p>
+                  <p className="mt-1 text-sm leading-relaxed">{b}</p>
                 </div>
               </li>
             ))}
@@ -372,47 +369,75 @@ function UkSection() {
 
 function Cta() {
   return (
-    <section id="contact" className="mx-auto max-w-7xl px-6 lg:px-10 pb-12">
-      <div className="relative rounded-3xl border border-rule bg-surface p-10 lg:p-16 overflow-hidden">
-        <div
-          className="absolute -top-32 -right-20 h-80 w-80 rounded-full opacity-30 blur-3xl"
-          style={{ background: "var(--accent)" }}
-        />
-        <div className="relative grid lg:grid-cols-12 gap-10 items-end">
-          <div className="lg:col-span-7">
-            <Tag>Get started</Tag>
-            <h2 className="mt-5 font-display text-4xl lg:text-6xl tracking-[-0.035em] text-ink leading-[1]">
-              See FleetMind on <span className="font-editorial italic">your</span> fleet.
-            </h2>
-            <p className="mt-6 text-ink-soft max-w-xl leading-relaxed">
-              30-minute working session with our team. We'll plug into a sample of your vehicles and show ranked decisions for real faults — no slideware.
-            </p>
+    <section id="contact" className="bg-surface px-6 pb-8 lg:px-10">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 py-12 lg:grid-cols-12 lg:py-16">
+        <div className="lg:col-span-6">
+          <Tag>Get started</Tag>
+          <h2 className="mt-5 max-w-2xl font-display text-3xl leading-[1.06] tracking-[-0.03em] text-ink sm:text-4xl lg:text-5xl">
+            See how FleetMind can{" "}
+            <span className="font-editorial italic" style={{ color: "var(--green)" }}>
+              reason
+            </span>{" "}
+            through your fleet reliability{" "}
+            <span className="font-editorial italic" style={{ color: "var(--red)" }}>
+              decisions.
+            </span>
+          </h2>
+          <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-ink-soft">
+            Bring telematics alerts, service history or recurring reliability issues. FleetMind
+            builds operational context, ranks risks, recommends actions and turns outcomes into
+            learning.
+          </p>
+        </div>
+        <form
+          className="rounded-2xl bg-card p-5 shadow-[var(--shadow-elevated)] sm:p-6 lg:col-span-6"
+          onSubmit={(e) => {
+            e.preventDefault();
+            alert("Thanks — we'll be in touch shortly.");
+          }}
+        >
+          <p className="font-mono-tag text-muted-foreground">Demo request</p>
+          <div className="mt-5 flex flex-col gap-3">
+            <input
+              required
+              type="email"
+              placeholder="you@fleet.com"
+              className="h-11 rounded-xl bg-background px-4 text-sm text-ink shadow-[inset_0_0_0_1px_var(--rule)] placeholder:text-muted-foreground focus:outline-none focus:shadow-[inset_0_0_0_1px_var(--ink)]"
+            />
+            <button
+              type="submit"
+              className="h-11 rounded-xl bg-ink px-5 text-sm font-medium text-background transition-colors hover:bg-ink/90"
+            >
+              Book a demo
+            </button>
           </div>
-          <form
-            className="lg:col-span-5 space-y-3"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Thanks — we'll be in touch shortly.");
-            }}
-          >
-            <div className="flex flex-col sm:flex-row gap-2">
-              <input
-                required
-                type="email"
-                placeholder="you@fleet.co.uk"
-                className="flex-1 h-12 rounded-full border border-rule bg-background px-5 text-[15px] text-ink placeholder:text-muted-foreground focus:outline-none focus:border-ink"
-              />
-              <button
-                type="submit"
-                className="h-12 rounded-full bg-ink px-6 text-[15px] font-medium text-background hover:bg-ink/90 transition-colors"
-              >
-                Book a demo
-              </button>
+          <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+            Operator-focused team · Reply within one working day
+          </p>
+        </form>
+      </div>
+      <div className="mx-auto max-w-7xl overflow-hidden py-4">
+        <div className="marquee-reverse cta-marquee flex w-max gap-10 whitespace-nowrap font-display text-base tracking-tight text-ink-soft/70">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <div key={i} className="flex items-center gap-10">
+              <span className="font-mono-tag">Built for teams managing</span>
+              <span>·</span>
+              <span>Telematics alerts</span>
+              <span>·</span>
+              <span>Service history</span>
+              <span>·</span>
+              <span>Fault databases</span>
+              <span>·</span>
+              <span>OEM manuals</span>
+              <span>·</span>
+              <span>Operational decisions</span>
+              <span>·</span>
+              <span>Reliability outcomes</span>
+              <span>·</span>
+              <span>Institutional knowledge</span>
+              <span>·</span>
             </div>
-            <p className="text-xs text-muted-foreground pl-2">
-              UK-based team · Reply within one working day
-            </p>
-          </form>
+          ))}
         </div>
       </div>
     </section>
@@ -424,11 +449,9 @@ function Index() {
     <main className="bg-background">
       <Nav />
       <Hero />
-      <Problem />
-      <Product />
       <HowItWorks />
       <Advantage />
-      <UkSection />
+      <StrategicAdvantage />
       <Cta />
       <Footer />
     </main>
