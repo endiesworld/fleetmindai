@@ -1,14 +1,13 @@
-import { cloudflare } from "@cloudflare/vite-plugin";
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import { defineConfig, loadEnv } from "vite";
+import { nitro } from "nitro/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
-// Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-// @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ mode }) => {
   const loadedEnv = loadEnv(mode, process.cwd(), "VITE_");
+
   const envDefine = Object.fromEntries(
     Object.entries(loadedEnv).map(([key, value]) => [
       `import.meta.env.${key}`,
@@ -18,6 +17,7 @@ export default defineConfig(({ command, mode }) => {
 
   return {
     define: envDefine,
+
     resolve: {
       alias: {
         "@": `${process.cwd()}/src`,
@@ -31,14 +31,15 @@ export default defineConfig(({ command, mode }) => {
         "@tanstack/query-core",
       ],
     },
+
     server: {
       host: "::",
       port: 8080,
     },
+
     plugins: [
       tailwindcss(),
       tsConfigPaths({ projects: ["./tsconfig.json"] }),
-      ...(command === "build" ? [cloudflare({ viteEnvironment: { name: "ssr" } })] : []),
       tanstackStart({
         importProtection: {
           behavior: "error",
@@ -49,6 +50,7 @@ export default defineConfig(({ command, mode }) => {
         },
         server: { entry: "server" },
       }),
+      nitro(),
       viteReact(),
     ],
   };
